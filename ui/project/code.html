@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects/Work</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "card-dark": "#192233",
+                        "surface-dark": "#232f48"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center px-4 py-4 justify-between">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col flex-1 px-4">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">~/projects</h2>
+<p class="text-slate-500 dark:text-gray-400 text-xs font-medium">Selected works &amp; experiments</p>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<!-- Filter Chips -->
+<div class="sticky top-[72px] z-40 bg-background-light dark:bg-background-dark py-2 border-b border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 transition-transform active:scale-95">
+<p class="text-white text-sm font-bold leading-normal">All</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-surface-dark pl-4 pr-4 hover:bg-gray-300 dark:hover:bg-[#2c3b59] transition-colors active:scale-95">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal">Python</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-surface-dark pl-4 pr-4 hover:bg-gray-300 dark:hover:bg-[#2c3b59] transition-colors active:scale-95">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal">Swift</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-surface-dark pl-4 pr-4 hover:bg-gray-300 dark:hover:bg-[#2c3b59] transition-colors active:scale-95">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal">React</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-surface-dark pl-4 pr-4 hover:bg-gray-300 dark:hover:bg-[#2c3b59] transition-colors active:scale-95">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal">Go</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-surface-dark pl-4 pr-4 hover:bg-gray-300 dark:hover:bg-[#2c3b59] transition-colors active:scale-95">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal">Design</p>
+</button>
+</div>
+</div>
+<!-- Project List -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Card 1 -->
+<div class="group relative flex flex-col gap-4 rounded-xl bg-white dark:bg-card-dark p-4 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800 transition-all hover:ring-primary dark:hover:ring-primary">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center rounded bg-blue-100 dark:bg-primary/20 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-primary font-mono">Python</span>
+<span class="inline-flex items-center rounded bg-gray-100 dark:bg-surface-dark px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-gray-400 font-mono">Pandas</span>
+<span class="inline-flex items-center rounded bg-gray-100 dark:bg-surface-dark px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-gray-400 font-mono">API</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-1">Algorithmic Trading Bot</h3>
+<p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Automated trading script utilizing moving averages to predict stock trends in real-time.</p>
+</div>
+</div>
+<!-- Thumbnail -->
+<div class="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-gray-700">
+<div class="h-full w-full bg-cover bg-center opacity-80" data-alt="Abstract data visualization with blue lines on dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0Nk1EBF-cif6SL92oT5uUbtfvQ1Z7rNgDt2MyVH2BQeEi5xwk17sRgbc0Q3c7-oWb59yjjcbAl96QaqxUYNzD-7-DhuJzTmuAnP0U3vZv-vTL6EE_yXuWWFS85KNceCz_GRXrEcekuGLO0pYY0HxgX6HCXaVM1zdfzC3ULMxegzin-DFVED71-EVXZPrbYQ1LfZpx-xOZitFOLOjb5Fz9x91Ql1-jmTPG5gH1WeLPO5t8Ocvt48dB7ao_nv8VU2o72_ItvgfjAgg");'></div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2 border-t border-gray-100 dark:border-gray-800 mt-1">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-600 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">code</span>
+<span>View Code</span>
+</button>
+<button class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-surface-dark p-2 text-slate-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-[#2c3b59] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col gap-4 rounded-xl bg-white dark:bg-card-dark p-4 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800 transition-all hover:ring-primary dark:hover:ring-primary">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center rounded bg-blue-100 dark:bg-primary/20 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-primary font-mono">Figma</span>
+<span class="inline-flex items-center rounded bg-gray-100 dark:bg-surface-dark px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-gray-400 font-mono">UX Research</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-1">Portfolio IA Redesign</h3>
+<p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">A comprehensive study on information architecture for personal developer portfolios.</p>
+</div>
+</div>
+<!-- Thumbnail -->
+<div class="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-gray-700">
+<div class="h-full w-full bg-cover bg-center opacity-80" data-alt="Wireframe sketches on a dark desk background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVzYgfurIHh9nyIDWs28DDepv9M0sYZM1JeIJq_1OpOYuU_lxZCxZCCrqdzgbdlJEoETlrOeUU5PIuMgHUyAsLvK18jCx_cZIJ_MvuZ94_CGVuDgFQWLK5JDIH-mQvoIWPDQiaGgHk62kE6sfbn6h5edcJiNTbGMBCrUw4DCi4nOnwqxIVc3gix5P9N3fsPItvl8lRq6mA7HJBb0m1Q_kRmInzHjwpIC7WGAGyQRFVOFJXwIaxY_TuyHkb0jDuqg85PuBDZp7IjhU");'></div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2 border-t border-gray-100 dark:border-gray-800 mt-1">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-600 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">article</span>
+<span>Read Case Study</span>
+</button>
+<button class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-surface-dark p-2 text-slate-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-[#2c3b59] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col gap-4 rounded-xl bg-white dark:bg-card-dark p-4 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800 transition-all hover:ring-primary dark:hover:ring-primary">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center rounded bg-blue-100 dark:bg-primary/20 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-primary font-mono">Go</span>
+<span class="inline-flex items-center rounded bg-gray-100 dark:bg-surface-dark px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-gray-400 font-mono">CLI</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-1">Weather CLI Tool</h3>
+<p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Lightning fast command line interface for fetching local forecasts.</p>
+</div>
+</div>
+<!-- Thumbnail -->
+<div class="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-gray-700">
+<div class="h-full w-full bg-cover bg-center opacity-80" data-alt="Terminal window showing code text on black screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPK4Oa203qo2GF2UuLjxgSoCOzF_kGQFXDtWXRKTMahT7pudyYpNOLFE-AnrAPFtD1gah1vLSsERciBXP3yfe_rmgBZL_2rhBbDr7If3qYGmuXKkBz1gPdQ-3DnDbrJrkECkGAJ094xbVOYRs-Nuv6xmKTKUJXHuD2sw-bnbnLt2sX4ukcsadotxpFNqqE578AvKDO4vJFB2BMjXJcMs96IMJYyGN5wW2WeofYk3VZfJ40GXC2zteVUpDGILEFpJODyiqj6BrUlyY");'></div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2 border-t border-gray-100 dark:border-gray-800 mt-1">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-600 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>View Repo</span>
+</button>
+<button class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-surface-dark p-2 text-slate-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-[#2c3b59] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col gap-4 rounded-xl bg-white dark:bg-card-dark p-4 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800 transition-all hover:ring-primary dark:hover:ring-primary">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center rounded bg-blue-100 dark:bg-primary/20 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-primary font-mono">React Native</span>
+<span class="inline-flex items-center rounded bg-gray-100 dark:bg-surface-dark px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-gray-400 font-mono">Mobile</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-1">Task Master App</h3>
+<p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Productivity application focusing on gesture-based task management.</p>
+</div>
+</div>
+<!-- Thumbnail -->
+<div class="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-gray-700">
+<div class="h-full w-full bg-cover bg-center opacity-80" data-alt="Mobile phone screen showing app interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhIZ54c7co8wG03RiHo1wpajBghKcfvHXYeiInmRgqx-4msc9YizPyheOj6Muf2Y_Rz3ZelLqOyTWjlkDzT8x6cNzYKlcnHghYHAF0QhkurupTMLJE_4JAwUFHLbyOdOHtnvR7ycgTjDQ1qFszdxk_lIxlNQSViD2EpvSdXKbejbS7I8Z9mlvSqmblAg0YhGRcAQ2hNWYJgweiMavUq93lTGt8ZVpjI8kuxhSe9Q2CeF9HoTyEzPd8I7lh4mgH6DRKeqFryX5UQjA");'></div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2 border-t border-gray-100 dark:border-gray-800 mt-1">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-600 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">install_mobile</span>
+<span>App Store</span>
+</button>
+<button class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-surface-dark p-2 text-slate-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-[#2c3b59] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 z-50 w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pb-safe">
+<div class="flex h-16 items-center justify-around px-2">
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">About</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined fill-current">terminal</span>
+<span class="text-[10px] font-medium">Projects</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[10px] font-medium">Contact</span>
+</button>
+</div>
+<!-- Safe area spacer for home indicator on iOS -->
+<div class="h-4 w-full bg-background-light dark:bg-background-dark"></div>
+</nav>
+</div>
+</body></html>
