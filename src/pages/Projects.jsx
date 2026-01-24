@@ -40,38 +40,71 @@ The PSO optimization uses a custom fitness function: S = (0.7 × F2-score) + (0.
         {
             id: 2,
             title: "Real-Time Face Recognition System",
-            shortDescription: "YOLOv10 + face_recognition for embedded environments",
-            fullDescription: "Implemented a face detection and recognition system using YOLOv10 for face identification and face_recognition library for matching. Extracts face encodings to compare against a reference database. Optimized for embedded environments requiring fast and efficient analysis.",
+            shortDescription: "YOLOv10 + face_recognition for ESI-SBA professor identification",
+            fullDescription: `A real-time face detection and recognition system developed for identifying professors at the Higher School of Computer Science (ESI-SBA).
+
+Detection Pipeline: YOLOv10 performs high-speed face detection, extracting face regions from video frames with exceptional accuracy even in challenging lighting conditions.
+
+Recognition Engine: The face_recognition library (based on dlib) generates 128-dimensional face encodings for each detected face, comparing them against a pre-built database of ESI-SBA professors.
+
+Real-Time Output: Professor names are displayed above bounding boxes in real-time, enabling instant identification during video playback or live camera feeds.
+
+Optimized for embedded systems requiring fast and efficient facial analysis.`,
             tags: ["Deep Learning", "Computer Vision"],
-            techStack: ["Python", "YOLOv10", "OpenCV", "face_recognition"],
+            techStack: ["Python", "YOLOv10", "OpenCV", "face_recognition", "dlib"],
             icon: "face",
             gradient: "from-blue-900 to-slate-900",
             period: "Dec 2024",
-            featured: true
+            featured: true,
+            demoVideo: "/facerec-demo-web.mp4"
         },
         {
             id: 3,
             title: "Weapon Detection on Jetson Nano",
-            shortDescription: "Edge AI with YOLOv8 + TensorRT optimization",
-            fullDescription: "Edge AI object detection system with YOLOv8 for real-time weapon identification. Trained a custom neural network on a specialized dataset and deployed on NVIDIA Jetson Nano with OpenCV-based image processing for security applications.",
+            shortDescription: "Real-time AI security system with YOLOv8 detecting weapons in surveillance feeds",
+            fullDescription: `A real-time object detection system for security surveillance using advanced deep learning techniques deployed on edge hardware.
+
+Objective: Develop a high-precision weapon detection model capable of identifying pistols, knives, and other objects (smartphones, wallets, banknotes, cards) in real-time video streams from security cameras.
+
+Model Architecture: YOLOv8 (You Only Look Once v8) trained on 5,859 labeled images - 5,002 for training, 450 for validation, and 407 for testing. The model leverages advanced attention layers and optimized small object detection.
+
+Edge Deployment: Optimized for NVIDIA Jetson Nano using TensorRT quantization and model compression techniques, enabling real-time inference with minimal latency and power consumption.
+
+Key Features: Multi-class detection (pistol, knife, smartphone, wallet, banknote, card), GPU-accelerated inference via 128 CUDA cores, and seamless integration with existing CCTV infrastructure.`,
             tags: ["Deep Learning", "Computer Vision", "IoT"],
-            techStack: ["Python", "YOLOv8", "Jetson Nano", "OpenCV", "TensorRT"],
+            techStack: ["Python", "YOLOv8", "Jetson Nano", "OpenCV", "TensorRT", "PyTorch", "CUDA"],
             icon: "memory",
             gradient: "from-green-900 to-slate-900",
             period: "Apr 2024 – Jun 2024",
-            featured: true
+            featured: true,
+            trainingImages: [
+                { src: "/weapon-training-1.jpg", title: "Training Results (1)" },
+                { src: "/weapon-training-2.jpg", title: "Training Results (2)" },
+                { src: "/weapon-training-3.jpg", title: "Training Results (3)" }
+            ],
+            datasetDiagram: "/weapon-dataset-diagram.png"
         },
         {
             id: 4,
             title: "Cloud Attendance System with RFID",
-            shortDescription: "Full-stack with React, Express, AWS deployment",
-            fullDescription: "Full-stack attendance management system with real-time data visualization dashboard. Integrated RFID technology for automated check-ins. Deployed on AWS EC2 with Amazon RDS database for scalable cloud infrastructure.",
+            shortDescription: "IoT-based attendance system with real-time dashboard & AWS cloud",
+            fullDescription: `A comprehensive full-stack attendance management system combining IoT hardware with modern web technologies for seamless automated check-ins.
+
+Hardware Layer: WeMos D1 Mini (ESP8266) microcontroller programmed in C++ reads RFID cards and sends data via WiFi to the cloud backend.
+
+Backend: Node.js with Express.js REST API handling authentication, attendance records, and real-time WebSocket updates. Connected to Amazon RDS (MySQL) for persistent data storage.
+
+Frontend: React.js dashboard with real-time data visualization, attendance analytics, employee management, and export functionality.
+
+Cloud Infrastructure: Deployed on AWS EC2 for high availability, with Amazon RDS for database management and automatic backups.`,
             tags: ["Full Stack", "IoT"],
-            techStack: ["React", "Express.js", "AWS EC2", "Amazon RDS", "RFID"],
+            techStack: ["C++", "Arduino", "ESP8266", "Node.js", "React", "AWS EC2", "Amazon RDS", "RFID"],
             icon: "badge",
             gradient: "from-purple-900 to-slate-900",
             period: "Jan 2024",
-            featured: false
+            featured: true,
+            architectureImage: "/rfid-architecture.png",
+            dashboardImage: "/rfid-dashboard.png"
         }
     ]
 
@@ -303,6 +336,70 @@ The PSO optimization uses a custom fitness function: S = (0.7 × F2-score) + (0.
                                             alt="System Architecture"
                                             className="w-full h-auto"
                                         />
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Dashboard Image */}
+                            {selectedProject.dashboardImage && (
+                                <div>
+                                    <h3 className="text-slate-400 text-sm font-mono mb-3">// Hardware & IoT Integration</h3>
+                                    <div className="rounded-xl overflow-hidden border border-white/10">
+                                        <img
+                                            src={selectedProject.dashboardImage}
+                                            alt="Dashboard Preview"
+                                            className="w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Training Images */}
+                            {selectedProject.trainingImages && (
+                                <div>
+                                    <h3 className="text-slate-400 text-sm font-mono mb-3">// Training Results</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        {selectedProject.trainingImages.map((img, idx) => (
+                                            <div key={idx} className="rounded-xl overflow-hidden border border-white/10">
+                                                <img
+                                                    src={img.src}
+                                                    alt={img.title}
+                                                    className="w-full h-auto"
+                                                />
+                                                <p className="text-slate-400 text-xs text-center py-2 bg-white/5">{img.title}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Dataset Diagram */}
+                            {selectedProject.datasetDiagram && (
+                                <div>
+                                    <h3 className="text-slate-400 text-sm font-mono mb-3">// Dataset Analysis</h3>
+                                    <div className="rounded-xl overflow-hidden border border-white/10 bg-white">
+                                        <img
+                                            src={selectedProject.datasetDiagram}
+                                            alt="Dataset Diagram"
+                                            className="w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Demo Video */}
+                            {selectedProject.demoVideo && (
+                                <div>
+                                    <h3 className="text-slate-400 text-sm font-mono mb-3">// Live Demo</h3>
+                                    <div className="rounded-xl overflow-hidden border border-white/10">
+                                        <video
+                                            src={selectedProject.demoVideo}
+                                            controls
+                                            className="w-full h-auto"
+                                            poster=""
+                                        >
+                                            Your browser does not support the video tag.
+                                        </video>
                                     </div>
                                 </div>
                             )}
